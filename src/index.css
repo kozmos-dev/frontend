@@ -1,0 +1,187 @@
+/* FROM SOLID */
+
+body {
+  margin: 0;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --uno: bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-300 overflow-clip;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* MISC */
+
+.active, .accent {
+  --uno: text-sky-600 dark:text-sky-500;
+}
+
+.flexbox, .box {
+  --uno: bg-gray-200 dark:bg-gray-950 border-gray-200 dark:border-gray-950 rounded-2xl overflow-y-hidden overflow-x-visible;
+  border-width: 0.5rem;
+}
+
+.flexbox:hover, .box:hover {
+  --uno: overflow-y-scroll;
+}
+
+.flexbox {
+  --uno: flex gap-2;
+}
+
+.center {
+  --uno: w-full h-full flex flex-row justify-center;
+}
+
+#guildList a {
+  --uno: transition;
+  transition-property: border-radius;
+}
+
+#guildList .inactive {
+  --uno: rounded-full;
+}
+
+#guildList .active {
+  --uno: rounded-lg;
+}
+
+/* FADE GRADIENT */
+
+@media (prefers-color-scheme: dark) {
+  .fadeLeft {
+    background: linear-gradient(0.25turn, rgb(17, 24, 39), #00000000);
+  }
+
+  .fadeBottom {
+    background: linear-gradient(0.5turn, rgb(17, 24, 39), #00000000);
+  }
+
+  .fadeRight {
+    background: linear-gradient(0.75turn, rgb(17, 24, 39), #00000000);
+  }
+
+  .fadeTop {
+    background: linear-gradient(0.5turn, rgb(17, 24, 39), #00000000);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .fadeLeft {
+    background: linear-gradient(0.25turn, rgb(209, 213, 219), #00000000);
+  }
+
+  .fadeBottom {
+    background: linear-gradient(0.5turn, rgb(209, 213, 219), #00000000);
+  }
+
+  .fadeRight {
+    background: linear-gradient(0.75turn, rgb(209, 213, 219), #00000000);
+  }
+
+  .fadeTop {
+    background: linear-gradient(0.5turn, rgb(209, 213, 219), #00000000);
+  }
+}
+
+/* SCROLLBAR */
+
+.barless::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  --uno: bg-gray-300 dark:bg-gray-900 border-gray-200 dark:border-gray-950;
+  border-radius: 0.25rem;
+}
+
+/* ANIMATIONS */
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.guildPulsing {
+  animation: guildPulse 2s infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  @keyframes guildPulse {
+    0%, 100% {
+      background-color: rgb(3, 7, 18);
+    }
+    50% {
+      background-color: rgb(17, 24, 39);
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  @keyframes guildPulse {
+    0%, 100% {
+      background-color: rgb(209, 213, 219);
+    }
+    50% {
+      background-color: rgb(229, 231, 235);
+    }
+  }
+}
+
+/*
+button {
+  outline: none;
+}
+
+:modal {
+  @apply p-4;
+  @apply rounded-lg;
+  @apply transition;
+  @apply shadow-lg;
+  @apply border-t;
+  @apply border-gray-400;
+  @apply dark:border-gray-800;
+  @apply bg-gray-300;
+  @apply dark:bg-gray-900;
+  @apply text-gray-900;
+  @apply dark:text-gray-300
+}
+
+:modal .actions {
+  @apply justify-end;
+}
+
+#navigator .active {
+  @apply text-sky-500;
+}
+
+.unauthenticated #navigator {
+  @apply text-gray-500;
+}
+
+.unauthenticated #navigator a {
+  @apply cursor-not-allowed;
+}
+
+.unauthenticated #navigator a:first-child,
+.unauthenticated #navigator a:last-child {
+  @apply cursor-default;
+}
+*/
