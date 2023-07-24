@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'Alexandria', sans-serif;
+  font-family: "Alexandria", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,11 +11,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 /* MISC */
+
+#homeImage {
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 25%, transparent 100%);
+  z-index: -5;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00ffffff", endColorstr="#ffffff",GradientType=0);
+  width: 100%;
+  height: calc(100% - 7rem);
+  object-fit: cover;
+}
 
 .active, .accent {
   --uno: text-sky-600 dark:text-sky-500;
@@ -35,7 +45,7 @@ code {
 }
 
 .center {
-  --uno: w-full h-full flex flex-row justify-center;
+  --uno: w-full h-full flex items-center place-content-center;
 }
 
 #guildList a {

@@ -1,10 +1,10 @@
-import type { Component } from 'solid-js';
-import { A } from "@solidjs/router";
+import type { Component } from 'solid-js'
+import { A } from '@solidjs/router'
 
-type NavLinkProps = {
-  name: string;
-  href: string;
-  icon: string;
+interface NavLinkProps {
+  name: string
+  href: string
+  icon: string
 }
 
 const NavLink: Component<NavLinkProps> = (props) => {
@@ -15,7 +15,7 @@ const NavLink: Component<NavLinkProps> = (props) => {
         <figcaption class="text-sm whitespace-nowrap">{props.name}</figcaption>
       </figure>
     </A>
-  );
-};
+  )
+}
 
-export default NavLink;
+export default NavLink

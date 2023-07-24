@@ -1,10 +1,10 @@
 /* @refresh reload */
-import { render } from 'solid-js/web';
-import { Router } from "@solidjs/router";
-import App from './App';
-import '@unocss/reset/tailwind-compat.css';
-import './index.css';
-import 'virtual:uno.css';
+import { render } from 'solid-js/web'
+import { Router } from '@solidjs/router'
+import App from './App'
+import '@unocss/reset/tailwind-compat.css'
+import './index.css'
+import 'virtual:uno.css'
 
 render(
   () => (
@@ -12,4 +12,4 @@ render(
       <App />
     </Router>
   ), document.getElementById('root') as HTMLElement
-);
+)

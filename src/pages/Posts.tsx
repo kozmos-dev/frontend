@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js';
+import type { Component } from 'solid-js'
 
 const Posts: Component = () => {
   return (
@@ -7,7 +7,7 @@ const Posts: Component = () => {
         <p>posts</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Posts;
+export default Posts
