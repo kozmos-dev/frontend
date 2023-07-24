@@ -3,7 +3,7 @@ import { createResource, For } from 'solid-js'
 import * as api from '../api/chats'
 import Chat from '../components/Chat'
 
-const chat_default_classes = 'w-16 h-16 p-2 flex items-center justify-center bg-gray-300 dark:bg-gray-900'
+const chatDefaultClasses = 'w-16 h-16 p-2 flex items-center justify-center bg-gray-300 dark:bg-gray-900'
 
 const Chats: Component = () => {
   const [chats, { /* mutate: mutateChats, */ refetch: refetchChats }] = createResource(api.chats)
@@ -12,12 +12,12 @@ const Chats: Component = () => {
     <div class="center gap-2">
       <div class="w-72 h-full flex-col flexbox">
         {chats.loading && (
-          <div class={`chatPulsing ${chat_default_classes}`}>
+          <div class={`chatPulsing ${chatDefaultClasses}`}>
             <div class="spin i-tabler-loader-2 w-10 h-10" />
           </div>
         )}
-        {chats.error && (
-          <button class={chat_default_classes} onClick={[refetchChats, null]}>
+        {chats.error as boolean && (
+          <button class={chatDefaultClasses} onClick={[refetchChats, null]}>
             <div class="i-tabler-exclamation-circle w-10 h-10 text-rose-500" />
           </button>
         )}

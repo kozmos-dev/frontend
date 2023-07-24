@@ -21,7 +21,7 @@ const Settings = lazy(async () => await import('./pages/Settings'))
 const App: Component = () => {
   return (
     <>
-      <div class="m-2" style="height: calc(100vh - 7.5rem)">
+      <div class="m-2" style={{ height: 'calc(100vh - 7.5rem)' }}>
         <Routes>
           <Route path='/' component={Home} />
           <Route path='/news/:page?' component={News} />

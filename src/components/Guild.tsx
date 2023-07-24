@@ -7,13 +7,16 @@ interface GuildIconProps {
 }
 
 const GuildIcon: Component<GuildIconProps> = (props) => {
-  let initials = ''
-  const words = props.info.name.split(' ')
-  words.forEach((word) => {
-    if (word.length > 0) {
-      initials += word.charAt(0)
-    }
-  })
+  function initials (): string {
+    let initials = ''
+    const words = props.info.name.split(' ')
+    words.forEach((word) => {
+      if (word.length > 0) {
+        initials += word.charAt(0)
+      }
+    })
+    return initials
+  }
 
   return (
         <A href={`/guilds/${props.info.id}`} title={props.info.name} draggable={true} class={
@@ -23,7 +26,7 @@ const GuildIcon: Component<GuildIconProps> = (props) => {
                 <img class="w-full h-full" src={`/assets/server/avatar/${props.info.id}`} />
                 )
               : (
-                <p class="text-5">{initials}</p>
+                <p class="text-5">{initials()}</p>
                 )}
         </A>
   )

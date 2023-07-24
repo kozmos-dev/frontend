@@ -6,8 +6,8 @@ export interface Emoji {
 }
 
 export class APIError extends Error {
-    constructor(message: string) {
-      super(message);
-      this.message = message;
-    }
+  constructor (message: string) {
+    super(message)
+    this.message = message
+  }
 }
